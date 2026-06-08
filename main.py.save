@@ -1,0 +1,13 @@
+from core.ftp_manager import FTPManager
+
+print("LapinRose v0.1")
+
+host = input("FTP Host : ")
+user = input("FTP User : ")
+password = input("FTP Password : ")
+
+ftp = FTPManager(host, user, password)
+
+ftp.connect()
+ftp.list_files()
+ftp.disconnect()

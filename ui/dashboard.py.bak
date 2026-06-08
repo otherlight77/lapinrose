@@ -1,0 +1,99 @@
+import tkinter as tk
+from tkinter import ttk
+
+root = tk.Tk()
+root.title("🐰 LapinRose v0.2")
+root.geometry("900x600")
+
+title = tk.Label(
+    root,
+    text="🐰 LapinRose v0.2",
+    font=("Arial", 22, "bold")
+)
+title.pack(pady=10)
+
+tabs = ttk.Notebook(root)
+tabs.pack(fill="both", expand=True)
+
+ftp_tab = ttk.Frame(tabs)
+sql_tab = ttk.Frame(tabs)
+github_tab = ttk.Frame(tabs)
+mining_tab = ttk.Frame(tabs)
+crypto_tab = ttk.Frame(tabs)
+logs_tab = ttk.Frame(tabs)
+
+tabs.add(ftp_tab, text="FTP")
+tabs.add(sql_tab, text="SQL")
+tabs.add(github_tab, text="GitHub")
+tabs.add(mining_tab, text="Mining")
+tabs.add(crypto_tab, text="Crypto")
+tabs.add(logs_tab, text="Logs")
+
+# FTP
+tk.Label(ftp_tab, text="FTP Host").pack()
+tk.Entry(ftp_tab, width=50).pack()
+
+tk.Label(ftp_tab, text="FTP User").pack()
+tk.Entry(ftp_tab, width=50).pack()
+
+tk.Label(ftp_tab, text="FTP Password").pack()
+tk.Entry(ftp_tab, width=50, show="*").pack()
+
+tk.Button(
+    ftp_tab,
+    text="Connexion FTP"
+).pack(pady=10)
+
+# SQL
+tk.Label(sql_tab, text="SQL Host").pack()
+tk.Entry(sql_tab, width=50).pack()
+
+tk.Label(sql_tab, text="SQL User").pack()
+tk.Entry(sql_tab, width=50).pack()
+
+tk.Label(sql_tab, text="SQL Password").pack()
+tk.Entry(sql_tab, width=50, show="*").pack()
+
+tk.Button(
+    sql_tab,
+    text="Connexion SQL"
+).pack(pady=10)
+
+# GitHub
+tk.Label(github_tab, text="Repository").pack()
+tk.Entry(github_tab, width=60).pack()
+
+tk.Button(
+    github_tab,
+    text="Git Clone"
+).pack(pady=10)
+
+# Mining
+tk.Label(
+    mining_tab,
+    text="Future Scanner Mining\nAleo / Kaspa / Flux / RXD",
+    font=("Arial", 14)
+).pack(pady=20)
+
+tk.Button(
+    mining_tab,
+    text="Scan Mining"
+).pack()
+
+# Crypto
+tk.Label(
+    crypto_tab,
+    text="""
+Aleo   ⭐⭐⭐⭐⭐
+Kaspa  ⭐⭐⭐⭐
+Flux   ⭐⭐⭐
+RXD    ⭐⭐
+""",
+    font=("Arial", 14)
+).pack(pady=20)
+
+# Logs
+logbox = tk.Text(logs_tab)
+logbox.pack(fill="both", expand=True)
+
+root.mainloop()

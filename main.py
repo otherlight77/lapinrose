@@ -1,14 +1,7 @@
+import subprocess
+import os
 
-from core.ftp_manager import FTPManager
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+dashboard = os.path.join(BASE_DIR, "ui", "dashboard.py")
 
-print("LapinRose v0.1")
-
-host = input("FTP Host : ")
-user = input("FTP User : ")
-password = input("FTP Password : ")
-
-ftp = FTPManager(host, user, password)
-
-ftp.connect()
-ftp.list_files()
-ftp.disconnect()
+subprocess.run(["python3", dashboard])
