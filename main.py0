@@ -1,0 +1,15 @@
+from core.ftp_manager import FTPManager
+
+print("LapinRose v0.1")
+
+# Exemple
+ftp = FTPManager(
+    "ftp.example.com",
+    "user",
+    "password"
+)
+
+# ftp.connect()
+# ftp.list_files()
+# ftp.disconnect()
+
